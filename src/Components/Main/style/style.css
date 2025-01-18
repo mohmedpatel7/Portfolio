@@ -91,3 +91,11 @@ a {
     width: 100%;
     /* Full underline on hover */
 }
+
+.information {
+    color: #FFFFFF;
+    background-color: #202020;
+    border: 0.2mm solid;
+    border-color: #FFAA1D;
+    max-width: 5in;
+}

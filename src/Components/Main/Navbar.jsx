@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="container-fluid">
         {/* Navbar Links */}
         <div className="d-flex justify-content-md-end justify-content-center w-100">
-          <Link to="/about" className="nav-link navbar-link mx-2">
+          <Link to="/" className="nav-link navbar-link mx-2">
             About
           </Link>
           <Link to="/projects" className="nav-link navbar-link mx-2">

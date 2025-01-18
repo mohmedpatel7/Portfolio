@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/style.css";
 import img from "./style/profile.avif";
 import Navbar from "./Navbar";
+import About from "./About";
+import { Outlet } from "react-router-dom";
 
 export default function Root() {
   const [showDetails, setShowDetails] = useState(false);
@@ -127,6 +129,9 @@ export default function Root() {
                 {/* Navbar for Desktop */}
                 <div className="d-md-flex justify-content-end d-none">
                   <Navbar />
+                </div>
+                <div>
+                  <Outlet />
                 </div>
               </div>
 
