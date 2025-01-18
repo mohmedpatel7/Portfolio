@@ -32,10 +32,35 @@ body {
 }
 
 .badge-icons {
-    border: 0.2mm solid;
-    border-color: #FFAA1D;
+    border: 0.2mm solid #FFAA1D;
+    /* Border color */
     font-size: medium;
+    /* Font size */
     color: #FFAA1D;
+    /* Text color */
+    background-color: rgba(255, 170, 29, 0.1);
+    /* Light background for contrast */
+    padding: 5px 10px;
+    /* Padding for spacing */
+    border-radius: 8px;
+    /* Rounded corners */
+    display: inline-flex;
+    /* Align items in a row */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    box-shadow: 0 2px 5px #FFFFFF(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effects */
+}
+
+.badge-icons:hover {
+    background-color: rgba(255, 170, 29, 0.2);
+    /* Darker background on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
 }
 
 .badge-details {

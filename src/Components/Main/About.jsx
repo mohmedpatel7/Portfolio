@@ -25,7 +25,7 @@ export default function About() {
             <h3 className="mb-3">What I'm Doing</h3>
             <div className="card information">
               <div className="card-body">
-                <h5 className="">
+                <h5>
                   <i
                     class="fa-solid fa-code me-2"
                     style={{ color: "#FFAA1D" }}

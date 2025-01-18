@@ -61,7 +61,12 @@ export default function Root() {
                       <div className="row badge badge-details">
                         <div className="d-flex align-items-center mt-1 mb-1">
                           <strong className="badge badge-icons me-2">
-                            <i className="fa-regular fa-envelope"></i>
+                            <i
+                              className="fa-regular fa-envelope"
+                              onClick={() => {
+                                window.open("mailto:mohmedwork709@gmail.com");
+                              }}
+                            ></i>
                           </strong>
                           <a
                             href="mailto:mohmedwork709@gmail.com"
@@ -75,7 +80,15 @@ export default function Root() {
                       <div className="row badge badge-details mt-3">
                         <div className="d-flex align-items-center mt-1 mb-1">
                           <strong className="badge badge-icons me-2">
-                            <i class="fa-brands fa-linkedin"></i>
+                            <i
+                              class="fa-brands fa-linkedin"
+                              onClick={() => {
+                                window.open(
+                                  "https://www.linkedin.com/in/mohmed-patel-88a991268/",
+                                  "_blank"
+                                );
+                              }}
+                            ></i>
                           </strong>
                           <a
                             href="https://www.linkedin.com/in/mohmed-patel-88a991268/"
@@ -91,7 +104,15 @@ export default function Root() {
                       <div className="row badge badge-details mt-3">
                         <div className="d-flex align-items-center mt-1 mb-1">
                           <strong className="badge badge-icons me-2">
-                            <i class="fa-brands fa-github"></i>
+                            <i
+                              class="fa-brands fa-github"
+                              onClick={() => {
+                                window.open(
+                                  "https://github.com/mohmedpatel7",
+                                  "_blank"
+                                );
+                              }}
+                            ></i>
                           </strong>
                           <a
                             href="https://github.com/mohmedpatel7"
@@ -130,7 +151,7 @@ export default function Root() {
                 <div className="d-md-flex justify-content-end d-none">
                   <Navbar />
                 </div>
-                <div>
+                <div className="mb-4">
                   <Outlet />
                 </div>
               </div>
