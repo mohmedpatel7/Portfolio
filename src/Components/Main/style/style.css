@@ -1,0 +1,49 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+.section {
+    background-color: #202020;
+    color: #FFFFFF;
+    border: 0.5px solid;
+    border-color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: 0 2px 5px #FFFFFF;
+    /* Shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+.name {
+    font-size: 20pt;
+}
+
+.badge-role {
+    border: 0.2mm solid;
+    border-color: #FFAA1D;
+
+}
+
+.arraw {
+    font-size: large;
+    font-weight: 200;
+    color: #FFFFFF;
+}
+
+.badge-icons {
+    border: 0.2mm solid;
+    border-color: #FFAA1D;
+    font-size: medium;
+    color: #FFAA1D;
+}
+
+.badge-details {
+    border: 0.2mm solid;
+    border-color: #FFAA1D;
+    min-width: 3.2in;
+}
+
+a {
+    font-size: 15px;
+}
