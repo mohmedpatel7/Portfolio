@@ -47,3 +47,47 @@ body {
 a {
     font-size: 15px;
 }
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
+    border-radius: 8px;
+}
+
+.navbar-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    /* Default link color */
+    text-decoration: none;
+    position: relative;
+    /* For hover effect */
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Smooth hover transition */
+}
+
+.navbar-link:hover {
+    color: #FFAA1D;
+    /* Hover color */
+    transform: scale(1.1);
+    /* Slight scaling effect */
+}
+
+/* Hover underline animation */
+.navbar-link::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFAA1D;
+    /* Underline color */
+    transition: width 0.3s ease;
+    /* Smooth animation */
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+    /* Full underline on hover */
+}

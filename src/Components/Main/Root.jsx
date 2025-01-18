@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/style.css";
 import img from "./style/profile.avif";
+import Navbar from "./Navbar";
 
 export default function Root() {
   const [showDetails, setShowDetails] = useState(false);
@@ -119,20 +120,19 @@ export default function Root() {
           {/* Right Section: Achievements */}
           <div className="col-md-8 col-12">
             <div
-              className="card h-100 p-3 section"
+              className="card h-100 p-3 section position-relative"
               style={{ minHeight: "300px" }}
             >
               <div className="card-body">
-                <h5 className="card-title">Achievements</h5>
-                <ul>
-                  <li>
-                    Developed a multi-platform application with React and
-                    Node.js
-                  </li>
-                  <li>Awarded 'Best Developer' in 2024</li>
-                  <li>Contributed to open-source projects on GitHub</li>
-                  <li>Speaker at international tech conferences</li>
-                </ul>
+                {/* Navbar for Desktop */}
+                <div className="d-md-flex justify-content-end d-none">
+                  <Navbar />
+                </div>
+              </div>
+
+              {/* Navbar for Mobile */}
+              <div className="d-md-none position-absolute bottom-0 start-0 w-100">
+                <Navbar />
               </div>
             </div>
           </div>
