@@ -81,7 +81,7 @@ export default function Root() {
                         <div className="d-flex align-items-center mt-1 mb-1">
                           <strong className="badge badge-icons me-2">
                             <i
-                              class="fa-brands fa-linkedin"
+                              className="fa-brands fa-linkedin"
                               onClick={() => {
                                 window.open(
                                   "https://www.linkedin.com/in/mohmed-patel-88a991268/",
@@ -105,7 +105,7 @@ export default function Root() {
                         <div className="d-flex align-items-center mt-1 mb-1">
                           <strong className="badge badge-icons me-2">
                             <i
-                              class="fa-brands fa-github"
+                              className="fa-brands fa-github"
                               onClick={() => {
                                 window.open(
                                   "https://github.com/mohmedpatel7",
@@ -128,7 +128,7 @@ export default function Root() {
                       <div className="row badge badge-details mt-3">
                         <div className="d-flex align-items-center mt-1 mb-1">
                           <strong className="badge badge-icons me-2">
-                            <i class="fa-solid fa-location-dot"></i>
+                            <i className="fa-solid fa-location-dot"></i>
                           </strong>
                           Bharuch, Gujarat, India
                         </div>
@@ -157,7 +157,7 @@ export default function Root() {
               </div>
 
               {/* Navbar for Mobile */}
-              <div className="d-md-none position-absolute bottom-0 start-0 w-100">
+              <div className="d-md-none nav-mb fixed-bottom">
                 <Navbar />
               </div>
             </div>

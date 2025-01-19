@@ -124,3 +124,62 @@ a {
     border-color: #FFAA1D;
     max-width: 5in;
 }
+
+/* Card Image Styling */
+.card-img-container {
+    width: 100%;
+    height: 200px;
+    /* Set a fixed height for consistent card layout */
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    /* Rounded top corners */
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers the area properly */
+}
+
+/* Card Body Styling */
+.card {
+    border-radius: 10px;
+    /* Rounded corners for the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #202020;
+    color: #FFFFFF;
+    border: 0.2mm solid;
+    border-color: #FFAA1D;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Shadow effect */
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Responsive Margin */
+@media (max-width: 576px) {
+    .card-img-container {
+        height: 150px;
+        /* Reduce height for small screens */
+    }
+}
+
+.nav-mb {
+    background-color: #121212;
+    border-radius: 5px;
+}
