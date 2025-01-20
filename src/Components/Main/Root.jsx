@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/style.css";
 import img from "./style/profile.avif";
 import Navbar from "./Navbar";
-import About from "./About";
 import { Outlet } from "react-router-dom";
 
 export default function Root() {
@@ -14,6 +13,7 @@ export default function Root() {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const rightSectionRef = useRef(null);
 
   // Define the routes in order for swipe navigation
   const routes = ["/", "/projects", "/resume"];
@@ -34,12 +34,39 @@ export default function Root() {
     trackMouse: true, // Optional: For testing with a mouse
   });
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rightSectionRef.current) {
+        const { scrollTop, scrollHeight, clientHeight } =
+          rightSectionRef.current;
+        if (scrollTop + clientHeight < scrollHeight) {
+          // Prevent scrolling on the left section
+          document.querySelector(".left-section").style.overflowY = "hidden";
+        } else {
+          // Allow scrolling on the left section
+          document.querySelector(".left-section").style.overflowY = "auto";
+        }
+      }
+    };
+
+    const rightSection = rightSectionRef.current;
+    if (rightSection) {
+      rightSection.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (rightSection) {
+        rightSection.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
   return (
     <div {...swipeHandlers}>
       <div className="container mt-4">
         <div className="row g-3">
           {/* Left Section: User Info */}
-          <div className="col-md-4 col-12">
+          <div className="col-md-4 col-12 left-section">
             <div
               className={`card p-3 d-flex flex-column align-items-center justify-content-center section ${
                 showDetails ? "h-auto" : "h-100"
@@ -164,7 +191,7 @@ export default function Root() {
           </div>
 
           {/* Right Section: Achievements */}
-          <div className="col-md-8 col-12">
+          <div className="col-md-8 col-12 right-section" ref={rightSectionRef}>
             <div
               className="card h-100 p-3 section position-relative"
               style={{ minHeight: "300px" }}
