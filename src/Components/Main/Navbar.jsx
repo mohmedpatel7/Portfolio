@@ -14,8 +14,8 @@ export default function Navbar() {
           <Link to="/projects" className="nav-link navbar-link mx-2">
             Projects
           </Link>
-          <Link to="/contact" className="nav-link navbar-link mx-2">
-            Contact
+          <Link to="/resume" className="nav-link navbar-link mx-2">
+            Resume
           </Link>
         </div>
       </div>

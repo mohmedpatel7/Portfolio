@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/style.css";
 import img from "./style/profile.avif";
@@ -8,11 +10,32 @@ import { Outlet } from "react-router-dom";
 
 export default function Root() {
   const [showDetails, setShowDetails] = useState(false);
-
   const toggleDetails = () => setShowDetails(!showDetails);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Define the routes in order for swipe navigation
+  const routes = ["/", "/projects", "/resume"];
+  const currentIndex = routes.indexOf(location.pathname);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => {
+      if (currentIndex < routes.length - 1) {
+        navigate(routes[currentIndex + 1]);
+      }
+    },
+    onSwipedRight: () => {
+      if (currentIndex > 0) {
+        navigate(routes[currentIndex - 1]);
+      }
+    },
+    preventScrollOnSwipe: true,
+    trackMouse: true, // Optional: For testing with a mouse
+  });
+
   return (
-    <>
+    <div {...swipeHandlers}>
       <div className="container mt-4">
         <div className="row g-3">
           {/* Left Section: User Info */}
@@ -57,83 +80,7 @@ export default function Root() {
 
                   <hr className="text w-100 mt-3" style={{ height: "5px" }} />
                   {showDetails || window.innerWidth >= 768 ? (
-                    <div>
-                      <div className="row badge badge-details">
-                        <div className="d-flex align-items-center mt-1 mb-1">
-                          <strong className="badge badge-icons me-2">
-                            <i
-                              className="fa-regular fa-envelope"
-                              onClick={() => {
-                                window.open("mailto:mohmedwork709@gmail.com");
-                              }}
-                            ></i>
-                          </strong>
-                          <a
-                            href="mailto:mohmedwork709@gmail.com"
-                            className="text-decoration-none text-light"
-                          >
-                            mohmedwork709@gmail.com
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className="row badge badge-details mt-3">
-                        <div className="d-flex align-items-center mt-1 mb-1">
-                          <strong className="badge badge-icons me-2">
-                            <i
-                              className="fa-brands fa-linkedin"
-                              onClick={() => {
-                                window.open(
-                                  "https://www.linkedin.com/in/mohmed-patel-88a991268/",
-                                  "_blank"
-                                );
-                              }}
-                            ></i>
-                          </strong>
-                          <a
-                            href="https://www.linkedin.com/in/mohmed-patel-88a991268/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-decoration-none text-light"
-                          >
-                            Mohmed Patel
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className="row badge badge-details mt-3">
-                        <div className="d-flex align-items-center mt-1 mb-1">
-                          <strong className="badge badge-icons me-2">
-                            <i
-                              className="fa-brands fa-github"
-                              onClick={() => {
-                                window.open(
-                                  "https://github.com/mohmedpatel7",
-                                  "_blank"
-                                );
-                              }}
-                            ></i>
-                          </strong>
-                          <a
-                            href="https://github.com/mohmedpatel7"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-decoration-none text-light"
-                          >
-                            mohmedpatel7
-                          </a>
-                        </div>
-                      </div>
-
-                      <div className="row badge badge-details mt-3">
-                        <div className="d-flex align-items-center mt-1 mb-1">
-                          <strong className="badge badge-icons me-2">
-                            <i className="fa-solid fa-location-dot"></i>
-                          </strong>
-                          Bharuch, Gujarat, India
-                        </div>
-                      </div>
-                    </div>
+                    <div>{/* User details */}</div>
                   ) : null}
                 </div>
               </div>
@@ -157,13 +104,13 @@ export default function Root() {
               </div>
 
               {/* Navbar for Mobile */}
-              <div className="d-md-none nav-mb fixed-bottom">
+              <div className="d-md-none nav-mb">
                 <Navbar />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
