@@ -80,7 +80,83 @@ export default function Root() {
 
                   <hr className="text w-100 mt-3" style={{ height: "5px" }} />
                   {showDetails || window.innerWidth >= 768 ? (
-                    <div>{/* User details */}</div>
+                    <div>
+                      <div className="row badge badge-details">
+                        <div className="d-flex align-items-center mt-1 mb-1">
+                          <strong className="badge badge-icons me-2">
+                            <i
+                              className="fa-regular fa-envelope"
+                              onClick={() => {
+                                window.open("mailto:mohmedwork709@gmail.com");
+                              }}
+                            ></i>
+                          </strong>
+                          <a
+                            href="mailto:mohmedwork709@gmail.com"
+                            className="text-decoration-none text-light"
+                          >
+                            mohmedwork709@gmail.com
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="row badge badge-details mt-3">
+                        <div className="d-flex align-items-center mt-1 mb-1">
+                          <strong className="badge badge-icons me-2">
+                            <i
+                              className="fa-brands fa-linkedin"
+                              onClick={() => {
+                                window.open(
+                                  "https://www.linkedin.com/in/mohmed-patel-88a991268/",
+                                  "_blank"
+                                );
+                              }}
+                            ></i>
+                          </strong>
+                          <a
+                            href="https://www.linkedin.com/in/mohmed-patel-88a991268/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-decoration-none text-light"
+                          >
+                            Mohmed Patel
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="row badge badge-details mt-3">
+                        <div className="d-flex align-items-center mt-1 mb-1">
+                          <strong className="badge badge-icons me-2">
+                            <i
+                              className="fa-brands fa-github"
+                              onClick={() => {
+                                window.open(
+                                  "https://github.com/mohmedpatel7",
+                                  "_blank"
+                                );
+                              }}
+                            ></i>
+                          </strong>
+                          <a
+                            href="https://github.com/mohmedpatel7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-decoration-none text-light"
+                          >
+                            mohmedpatel7
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="row badge badge-details mt-3">
+                        <div className="d-flex align-items-center mt-1 mb-1">
+                          <strong className="badge badge-icons me-2">
+                            <i className="fa-solid fa-location-dot"></i>
+                          </strong>
+                          Bharuch, Gujarat, India
+                        </div>
+                      </div>
+                    </div>
                   ) : null}
                 </div>
               </div>
