@@ -31,7 +31,7 @@ export default function Root() {
       }
     },
     preventScrollOnSwipe: true,
-    trackMouse: true, // Optional: For testing with a mouse
+    trackMouse: false, // Optional: For testing with a mouse
   });
 
   useEffect(() => {
